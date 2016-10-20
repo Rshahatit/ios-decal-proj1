@@ -8,32 +8,27 @@
 
 import UIKit
 
-weak var update:UIBarButtonItem!
-var uphead:String!
-var updetail:String!
-
-class ViewController: UIViewController {
+class TaskViewController: UIViewController {
     
-    @IBOutlet weak var done: UIBarButtonItem!
-    @IBOutlet weak var header: UITextField!
-    @IBOutlet weak var detail: UITextField!
+    @IBOutlet weak var stat: UILabel!
     
-    @IBAction func updateItem(done: UIBarButtonItem!) {
-        update = done
-        uphead = header.text
-        updetail = detail.text
-        
+    
+    @IBAction func updateStats(tableView:UITableView!) {
+        stat.text = String(itemsToDo.count)
     }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
+    
 }
 
